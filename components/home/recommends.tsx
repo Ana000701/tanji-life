@@ -1,0 +1,95 @@
+import Title from './title';
+
+import Recommend from './recommend';
+import CourseCard from './courseCard';
+export default function Recommends() {
+  return (
+    <section>
+      <div className='wrapper'>
+        <Title image='/home/title-icon-1.svg' title='碳吉學院學習地圖' />
+        <Recommend
+          image='/home/junior.jpg'
+          level='新手推薦'
+          slogan='打好基礎，啟航財富之旅'
+          course1={
+            <CourseCard
+              image='/courses/lesson_08.jpg'
+              title='線上賺錢,線下省稅:網購店家的稅務管理術'
+              teacher='白老師'
+              rating={4.9}
+              people={8932}
+              duration={4.6}
+              price={3600}
+            />
+          }
+          course2={
+            <CourseCard
+              image='/courses/lesson_10.jpg'
+              title='理財新手財務啟蒙之旅入門指南'
+              teacher='白老師'
+              rating={4.9}
+              people={8932}
+              duration={4.6}
+              price={2800}
+            />
+          }
+        />
+        <Recommend
+          image='/home/family.jpg'
+          level='投資推薦'
+          slogan='建立家庭儲蓄，提升投資能力'
+          order='lg:order-1'
+          course1={
+            <CourseCard
+              image='/courses/lesson_04.jpg'
+              title='家庭財務健檢:找出你的金錢漏洞'
+              teacher='白老師'
+              rating={4.9}
+              people={8932}
+              duration={4.6}
+              price={2800}
+            />
+          }
+          course2={
+            <CourseCard
+              image='/courses/lesson_07.jpg'
+              title='員工股權大揭秘:你的公司福利股票怎麼用?'
+              teacher='白老師'
+              rating={4.9}
+              people={8932}
+              duration={4.6}
+              price={2800}
+            />
+          }
+        />
+        <Recommend
+          image='/home/senior.jpg'
+          level='退休推薦'
+          slogan='財富自由，掌握未來！'
+          course1={
+            <CourseCard
+              image='/courses/lesson_06.jpg'
+              title='退休金不藏私!教你錢滾錢的秘密'
+              teacher='白老師'
+              rating={4.9}
+              people={8932}
+              duration={4.6}
+              price={2800}
+            />
+          }
+          course2={
+            <CourseCard
+              image='/courses/lesson_05.jpg'
+              title='退休理財全攻略:從規劃到實現'
+              teacher='白老師'
+              rating={4.9}
+              people={8932}
+              duration={4.6}
+              price={2800}
+            />
+          }
+        />
+      </div>
+    </section>
+  );
+}

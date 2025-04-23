@@ -18,7 +18,11 @@ export async function signInWithCredentials(
       password: formData.get('password'),
     });
 
-    await signIn('credentials', user);
+    await signIn('credentials', {
+      ...user,
+      redirect: true,
+      callbackUrl: formData.get('callbackUrl')?.toString() || '/',
+    });
 
     return { success: true, message: '登入成功' };
   } catch (error) {

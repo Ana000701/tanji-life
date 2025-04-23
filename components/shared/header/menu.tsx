@@ -9,22 +9,18 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import UserButton from './user-button';
 
-const Menu = () => {
+export default function Menu() {
   return (
-    <div className='flex justify-end gap-3'>
-      <nav className='hidden md:flex w-full max-w-xs gap-1'>
-        <Button asChild variant='ghost'>
-          <Link href='/cart'>
-            <ShoppingCart />
-          </Link>
-        </Button>
-        <Button
-          asChild
-          className='bg-primary-600 text-white hover:bg-primary-700 '
-        >
-          <Link href='/signin'>登入／註冊</Link>
-        </Button>
+    <div className='flex justify-end gap-3 items-center'>
+      <Button asChild variant='ghost'>
+        <Link href='/cart'>
+          <ShoppingCart />
+        </Link>
+      </Button>
+      <nav className='hidden md:flex'>
+        <UserButton />
       </nav>
       <nav className='md:hidden'>
         <Sheet>
@@ -33,24 +29,11 @@ const Menu = () => {
           </SheetTrigger>
           <SheetContent className='flex flex-col items-start p-5'>
             <SheetTitle>Menu</SheetTitle>
-
-            <Button asChild variant='ghost'>
-              <Link href='/cart'>
-                <ShoppingCart /> 購物車
-              </Link>
-            </Button>
-            <Button
-              asChild
-              className='bg-primary-600 text-white hover:bg-primary-700'
-            >
-              <Link href='/sign-in'>登入／註冊</Link>
-            </Button>
+            <UserButton />
           </SheetContent>
           <SheetDescription></SheetDescription>
         </Sheet>
       </nav>
     </div>
   );
-};
-
-export default Menu;
+}

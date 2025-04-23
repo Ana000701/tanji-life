@@ -3,3 +3,11 @@ export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION || '碳吉人生，從學習理財開始';
 export const SERVER_URL =
   process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000';
+
+export const signInDefaultValues = { email: '', password: '' };
+export const signUpDefaultValues = {
+  name: 'Ana',
+  email: 'test@example.com',
+  password: 'password',
+  confirmPassword: 'password',
+};

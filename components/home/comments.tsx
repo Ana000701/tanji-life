@@ -8,7 +8,7 @@ import {
 import CommentCard from './commentCard';
 import Title from './title';
 
-import { comments } from '@/db/sampleData';
+import { comments } from '@/db/sample-data';
 
 const CommentCards = comments.map((item) => (
   <CarouselItem

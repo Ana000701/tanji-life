@@ -1,3 +1,5 @@
+import { hashSync } from 'bcrypt-ts-edge';
+
 export const comments = [
   {
     id: 1,
@@ -49,18 +51,19 @@ export const comments = [
   },
 ];
 
-export const courses = [
-  {
-    id: 1,
-    name: '',
-    slug: '',
-    category: '',
-    teacher: '',
-    badge: '',
-    image: '',
-    price: '',
-    discountPrice: '',
-    rating: 4.9,
-    studentNumber: 200,
-  },
-];
+export const sampleData = {
+  users: [
+    {
+      name: 'John',
+      email: 'admin@example.com',
+      password: hashSync('123456', 10),
+      role: 'admin',
+    },
+    {
+      name: 'Jane',
+      email: 'jane@example.com',
+      password: hashSync('123456', 10),
+      role: 'user',
+    },
+  ],
+};

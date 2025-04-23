@@ -1,6 +1,6 @@
 import { neonConfig } from '@neondatabase/serverless';
 import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../lib/generated/prisma';
 import ws from 'ws';
 
 // 配置 Neon 使用 WebSocket

@@ -150,6 +150,9 @@
     @apply bg-background text-foreground;
   }
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 .wrapper {
   @apply md:w-full xl:max-w-[80%] 2xl:max-w-[67.5%] mx-auto;

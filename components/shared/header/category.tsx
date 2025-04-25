@@ -5,13 +5,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
+import { getAllCategories } from '@/lib/actions/courses.actions';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 
-const Category = () => {
+export default async function Category() {
+  const categories = await getAllCategories();
+
   return (
     <div className='hidden md:block'>
       <DropdownMenu>
@@ -23,15 +26,13 @@ const Category = () => {
             <Link href='/courses'>所有領域</Link>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuCheckboxItem>個人理財</DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>家族財富</DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>投資規劃</DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>財務分析</DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>風險管理</DropdownMenuCheckboxItem>
+          {categories?.map((link) => (
+            <DropdownMenuCheckboxItem key={link.id}>
+              <Link href={`/courses/${link.name}`}>{link.name}</Link>
+            </DropdownMenuCheckboxItem>
+          ))}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
   );
-};
-
-export default Category;
+}

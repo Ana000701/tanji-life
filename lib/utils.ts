@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { CourseWithTeacher } from './types';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -31,4 +32,15 @@ export function formatError(error: any): string {
       ? error.message
       : JSON.stringify(error.message);
   }
+}
+
+// 將部分欄位類型數字轉字串
+export function serializeCourse(course: CourseWithTeacher) {
+  return {
+    ...course,
+    price: course.price.toString(),
+    originalPrice: course.originalPrice.toString(),
+    rating: course.rating.toString(),
+    totalDuration: course.totalDuration.toString(),
+  };
 }
